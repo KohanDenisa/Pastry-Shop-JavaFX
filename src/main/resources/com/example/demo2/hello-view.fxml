@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="700.0" prefWidth="700.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.Controller">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+<!--    <Label fx:id="welcomeText" />-->
+<!--    <Button onAction="#onHelloButtonClick" text="Hello!" />-->
+    <Pane layoutX="-2.0" layoutY="-1.0" prefHeight="357.0" prefWidth="660.0">
+        <children>
+            <TableView fx:id="cake_table" layoutY="39.0" prefHeight="312.0" prefWidth="308.0">
+                <columns>
+                    <TableColumn fx:id="table_cake_id" prefWidth="50.0" text="ID" />
+                    <TableColumn fx:id="table_cake_price" prefWidth="100.0" text="Price" />
+                    <TableColumn fx:id="table_cake_weight" prefWidth="150.0" text="Weight" />
+                </columns>
+            </TableView>
+         <Label layoutX="481.0" layoutY="12.0" text="Orders">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Label>
+            <TableView fx:id="order_table" layoutX="346.0" layoutY="39.0" prefHeight="312.0" prefWidth="314.0">
+                <columns>
+                    <TableColumn fx:id="table_order_id" prefWidth="75.0" text="ID" />
+                    <TableColumn fx:id="table_order_status" prefWidth="75.0" text="Status" />
+                    <TableColumn fx:id="table_order_date" prefWidth="75.0" text="Price" />
+                    <TableColumn fx:id="table_order_bcake" prefWidth="75.0" text="Birthday Cake ID" />
+                </columns>
+            </TableView>
+         <Label layoutX="105.0" layoutY="12.0" text="Birthday Cakes">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Label>
+         <Button fx:id="streams_test" layoutX="288.0" layoutY="9.0" mnemonicParsing="false" onAction="#onSteamsTestAction" text="Test Streams" />
+        </children>
+    </Pane>
+
+    <Pane layoutY="311.0" prefHeight="238.0" prefWidth="630.0">
+        <children>
+            <Pane prefHeight="238.0" prefWidth="315.0">
+                <children>
+                    <Label layoutX="104.0" layoutY="35.0" text="Birthday Cake Fields" />
+                    <TextField fx:id="bcake_price" layoutX="94.0" layoutY="99.0" />
+                    <Label layoutX="58.0" layoutY="103.0" text="Price" />
+                    <Label layoutX="52.0" layoutY="134.0" text="Weight" />
+                    <TextField fx:id="bcake_weight" layoutX="94.0" layoutY="130.0" />
+                    <Label layoutX="70.0" layoutY="71.0" text="ID" />
+                    <TextField fx:id="bcake_id" layoutX="96.0" layoutY="67.0" prefHeight="25.0" prefWidth="146.0" />
+                    <Button fx:id="bcake_create" layoutX="74.0" layoutY="173.0" mnemonicParsing="false" onAction="#onCreateCakeButton" text="Create" />
+                    <Button fx:id="bcake_update" layoutX="137.0" layoutY="173.0" mnemonicParsing="false" onAction="#onUpdateCakeButton" text="Update" />
+                    <Button fx:id="bcake_remove" layoutX="204.0" layoutY="173.0" mnemonicParsing="false" onAction="#onRemoveCakeButton" text="Remove" />
+                </children>
+            </Pane>
+            <Pane layoutX="341.0" prefHeight="239.0" prefWidth="319.0">
+                <children>
+                    <Label layoutX="127.0" layoutY="35.0" text="Order Fields" />
+                    <Label layoutX="68.0" layoutY="64.0" text="ID" />
+                    <TextField fx:id="order_id" layoutX="122.0" layoutY="60.0" />
+                    <Label layoutX="58.0" layoutY="96.0" text="Status" />
+                    <TextField fx:id="order_date" layoutX="122.0" layoutY="123.0" />
+                    <TextField fx:id="order_status" layoutX="122.0" layoutY="92.0" />
+                    <ChoiceBox fx:id="order_bcakes" layoutX="121.0" layoutY="154.0" prefWidth="150.0" />
+                    <Button fx:id="order_create" layoutX="65.0" layoutY="200.0" mnemonicParsing="false" onAction="#onCreateOrderButton" text="Create" />
+                    <Button fx:id="order_remove" layoutX="195.0" layoutY="200.0" mnemonicParsing="false" onAction="#onRemoveOrderButton" text="Remove" />
+                    <Button fx:id="order_update" layoutX="128.0" layoutY="200.0" mnemonicParsing="false" onAction="#onUpdateOrderButton" text="Update" />
+                    <Label layoutX="62.0" layoutY="127.0" text="Date" />
+                    <Label layoutX="39.0" layoutY="158.0" text="Birthday Cake" />
+                </children>
+            </Pane>
+        </children>
+    </Pane>
+   <Button fx:id="quit_button" mnemonicParsing="false" onAction="#closeButtonAction" text="Quit" />
+</VBox>
